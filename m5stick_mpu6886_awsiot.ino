@@ -22,7 +22,7 @@ const char* awsEndpoint = "<AWS_IOT_ENDPOINT>";
 // Example: xxxxxxxxxxxxxx.iot.ap-northeast-1.amazonaws.com
 
 const int awsPort = 8883;
-const char* pubTopic = "m5stickc_sensor";
+const char* pubTopic = "<YOUR_TOPIC>";
 const char* rootCA = "-----BEGIN CERTIFICATE-----\n" \
 "......" \
 "-----END CERTIFICATE-----\n";
@@ -73,7 +73,7 @@ void connect_awsiot() {
   while (!mqttClient.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Create a random client ID
-    String clientId = "<YOUR_DEVICE_NAME>";
+    String clientId = "<YOUR_THING_ID>";
     //clientId += String(random(0xffff), HEX);
     // Attempt to connect
     if (mqttClient.connect(clientId.c_str())) {
